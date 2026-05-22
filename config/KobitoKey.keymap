@@ -56,6 +56,12 @@
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
+
+        win {
+            bindings = <&kp LEFT_WIN>;
+            key-positions = <30 31>;
+            timeout-ms = <50>;
+        };
     };
 
     keymap {
