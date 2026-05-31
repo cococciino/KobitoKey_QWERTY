@@ -18,7 +18,7 @@
             psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
+            //low-power-enable;// cococcino
         };
     };
 };
@@ -36,7 +36,9 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        //irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;// cococcino
+        irq-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+
         cpi = <200>; /* センサー感度 */
 
 
@@ -79,7 +81,7 @@
   /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
-    require-prior-idle-ms = <350>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
+    require-prior-idle-ms = <10>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
   };
 };
 
@@ -88,7 +90,7 @@
 
     input-processors =
         <&sensor_rotation_right>,
-        <&zip_temp_layer 3 5000>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
+        <&zip_temp_layer 3 1200>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
 };
 
 &zip_temp_layer {
