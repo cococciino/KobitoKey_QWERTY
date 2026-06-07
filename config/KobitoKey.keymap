@@ -29,6 +29,10 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 
+/*マウスキーを押したらタイムアウトを延長する*/
+
+&mkp_input_listener { input-processors = <&zip_temp_layer 3 250>; };
+
 / {
     combos {
         compatible = "zmk,combos";

@@ -47,3 +47,9 @@
 
     input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 };
+
+
+/*キー入力中のオートマウスレイヤー誤爆防止*/  //auto
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
