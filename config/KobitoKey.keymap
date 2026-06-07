@@ -37,30 +37,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_eisu {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp LANG1>;
-        };
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
         win {
             bindings = <&kp LEFT_WIN>;
             key-positions = <30 31>;
@@ -73,10 +49,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W     &kp E                        &kp R        &kp T           &kp Y     &kp U        &kp I                &kp O         &kp P
-&kp A      &kp S     &kp D                        &kp F        &kp G           &kp H     &kp J        &kp K                &kp L         &kp MINUS
-&kp Z      &kp X     &kp C                        &kp V        &kp B           &kp N     &kp M        &kp COMMA            &kp DOT       &kp SLASH
-&kp LCTRL  &kp LALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 2 SPACE  &kp INT_HENKAN  &kp BSPC  &lt 1 ENTER  &mt RIGHT_SHIFT TAB  &kp LEFT_WIN  &lt 5 ESC
+&kp Q      &kp W         &kp E                        &kp R        &kp T                    &kp Y     &kp U        &kp I                &kp O            &kp P
+&kp A      &kp S         &kp D                        &kp F        &kp G                    &kp H     &kp J        &kp K                &kp L            &kp MINUS
+&kp Z      &kp X         &kp C                        &kp V        &kp B                    &kp N     &kp M        &kp COMMA            &kp DOT          &kp SLASH
+&kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 2 SPACE  &mt LEFT_ALT INT_HENKAN  &kp BSPC  &lt 1 ENTER  &mt RIGHT_SHIFT TAB  &kp PRINTSCREEN  &lt 5 ESC
             >;
         };
 
@@ -86,7 +62,7 @@
 &kp JP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp JP_LPAREN    &kp JP_RPAREN    &kp EXCLAMATION    &kp JP_AMPERSAND  &kp DOLLAR     &kp JP_YEN
 &kp JP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp PERCENT        &kp JP_QUOTE      &kp JP_DQUOTE  &kp JP_AT
 &kp SLASH        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp JP_LBRACE    &kp JP_RBRACE    &kp JP_UNDERSCORE  &kp SEMICOLON     &kp JP_COLON   &kp QUESTION
-&kp JP_EQUAL     &kp KP_NUMBER_0  &kp DOT          &kp LSHFT        &trans           &kp DEL          &trans             &trans            &trans         &trans
+&kp JP_EQUAL     &kp KP_NUMBER_0  &kp KP_DOT       &kp LSHFT        &trans           &kp DEL          &trans             &trans            &trans         &trans
             >;
         };
 
@@ -112,10 +88,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(Q)      &kp LS(W)     &kp LS(E)  &kp LS(R)  &kp LS(T)  &kp LS(Y)  &kp LS(U)  &kp LS(I)    &kp LS(O)   &kp LS(P)
+&kp LS(A)      &kp LS(S)     &kp LS(D)  &kp LS(F)  &kp LS(G)  &kp LS(H)  &kp LS(J)  &kp LS(K)    &kp LS(L)   &kp LS(EQUAL)
+&kp LS(Z)      &kp LS(X)     &kp LS(C)  &kp LS(V)  &kp LS(B)  &kp LS(N)  &kp LS(M)  &kp LS(LT)   &kp LS(GT)  &kp LS(QMARK)
+&kp LS(LCTRL)  &kp LS(LALT)  &trans     &trans     &trans     &trans     &trans     &kp LA(TAB)  &trans      &trans
             >;
         };
 
