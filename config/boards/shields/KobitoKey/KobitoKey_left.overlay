@@ -80,7 +80,7 @@
   /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
     compatible = "zmk,input-processor-temp-layer";
     #input-processor-cells = <2>;
-    require-prior-idle-ms = <10>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
+    require-prior-idle-ms = <200>; /* キー押下後、何msオートマウスレイヤに入らないようにするか、誤爆防止 */
   };
 };
 
@@ -96,9 +96,8 @@
     excluded-positions = <
         5
         7
-        8
         30
         31
-        35
+        32
     >;
 };
