@@ -5,6 +5,10 @@
 /* 列オフセット */
 &default_transform { col-offset = <5>; };
 
+/* 右側ペリフェラル（ドングルなし）では左トラックボールは不要 */
+/delete-node/ &tb_left_split;
+/delete-node/ &tb_left_listener;
+
 &pinctrl {
     spi0_default_r: spi0_default_r { group1 {
         psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
@@ -15,7 +19,7 @@
         psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        low-power-enable; //cococcino
+        low-power-enable;
     }; };
 };
 
@@ -32,8 +36,7 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //cococcino
-        //irq-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <600>;
         
         evt-type = <INPUT_EV_REL>;
@@ -46,10 +49,4 @@
     device = <&tb_right>;
 
     input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
-};
-
-
-/*キー入力中のオートマウスレイヤー誤爆防止*/  //auto
-&zip_temp_layer {
-    require-prior-idle-ms = <200>;
 };
