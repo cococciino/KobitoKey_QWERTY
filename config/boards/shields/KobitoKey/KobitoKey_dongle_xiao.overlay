@@ -94,20 +94,18 @@
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-        require-prior-idle-ms = <350>;
+        require-prior-idle-ms = <1200>;
     };
 };
 
 /* 除外キー位置設定（マウスボタンとモディファイアキー） */
 &zip_temp_layer {
     excluded-positions = <
-        6   /* Right MB1 */
-        7   /* Right MB3 */
-        8   /* Right MB2 */
-        30  /* Left modifier */
-        32  /* Left modifier */
-        33  /* Left modifier */
-        39  /* Right modifier */
+        5
+        7
+        8
+        30
+        31
     >;
 };
 
