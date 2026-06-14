@@ -48,7 +48,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "DEFAULT";
+            label = "TYPING";
             bindings = <
 &kp Q      &kp W         &kp E                        &kp R        &kp T                    &kp Y     &kp U        &kp I                &kp O            &kp P
 &kp A      &kp S         &kp D                        &kp F        &kp G                    &kp H     &kp J        &kp K                &kp L            &kp MINUS
@@ -68,7 +68,7 @@
         };
 
         layer2 {
-            label = "FUNCTION";
+            label = "FUNC";
             bindings = <
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &mkp MB1  &trans    &mkp MB2  &mkp MB2         &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans    &kp UP    &trans           &trans
@@ -97,6 +97,7 @@
         };
 
         layer_5 {
+            label = "BLE";
             bindings = <
 &trans        &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans
 &trans        &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans
