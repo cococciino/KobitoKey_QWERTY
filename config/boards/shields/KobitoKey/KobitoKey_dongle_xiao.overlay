@@ -71,7 +71,7 @@
         /* ポインター操作＋自動マウスレイヤー切り替え */
         input-processors =
                 <&sensor_rotation_right>,
-                <&zip_temp_layer 3 5000>;
+                <&zip_temp_layer 3 1200>;
     };
 
     /* 左トラックボール用のセンサー回転 */
